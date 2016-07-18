@@ -1,5 +1,5 @@
 $(function() {
-  $.get("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25&callback=", function(quotes) {
+  $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25&callback=", function(quotes) {
     displayQuote(quotes);
     $('#newQuote').on('click', function(event) {
       event.preventDefault();
