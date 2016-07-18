@@ -1,21 +1,21 @@
 $(function() {
-  $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25&callback=", function(quotes) {
-    displayQuote(quotes);
-    $('#newQuote').on('click', function(event) {
-      event.preventDefault();
+  $.ajax({
+    url: "http://quotes.stormconsultancy.co.uk/quotes.json",
+    dataType: "jsonp",
+    success: function(quotes) {
       displayQuote(quotes);
-    });
+      $('#newQuote').on('click', function(event) {
+        event.preventDefault();
+        displayQuote(quotes);
+      });
+    },
   });
 });
 
 function displayQuote(quotes) {
   var randomNum = Math.floor(Math.random() * (quotes.length + 1));
-  $("#quote").html(quotes[randomNum].content).append($('<footer/>').text(quotes[randomNum].title));
+  $("#quote").html(quotes[randomNum].quote).append($('<footer/>').text(quotes[randomNum].author));
   $('#tweetQuote').attr({
-    href: "https://twitter.com/intent/tweet?text=" + parseQuote(quotes[randomNum].content) + ' -' + quotes[randomNum].title
+    href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(quotes[randomNum].quote)}  -${encodeURIComponent(quotes[randomNum].author)}`
   })
 };
-
-function parseQuote(quote) {
-  return quote.slice(3, -5);
-}

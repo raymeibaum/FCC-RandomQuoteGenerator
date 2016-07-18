@@ -32,19 +32,23 @@
         <ul class="list-group collapse" id="toCollapse">
           <li class="list-group-item">
             <strong>Description</strong>
-            <p>Project description</p>
+            <p>Random Quote Generator is an intermediate front end project on Free Code Camp. The program allows you to click to view
+            a new quote, or to tweet the quote you're currently viewing.</p>
           </li>
           <li class="list-group-item">
             <strong>Features</strong>
-            <p>project features</p>
+            <p>The random quote generator makes an API call to retrieve an array of random quotes. It also features a Tweet button that
+            will tweet the current quote the user is viewing</p>
           </li>
           <li class="list-group-item">
             <strong>Challenges</strong>
-            <p>project challenges</p>
+            <p>The biggest challenge for me on this project was figuring out the API call. Unfortunately, because the quote API endpoint is
+            served over http, I am forced to also serve this page over http. I wish that I could find a way to make HTTPS work with it.</p>
+            <p>My other challenge was figuring out how to tweet long strings that feature string-unfriendly characters. The answer: encodeURIComponent()</p>
           </li>
           <li class="list-group-item">
             <strong>Technology</strong>
-            <p>project tech</p>
+            <p>jQuery, Bootstrap, AJAX, Programming Quotes API by Adam Pope, Tweet button API</p>
           </li>
         </ul>
       </div>
@@ -52,14 +56,9 @@
         <div id="quote"></div>
       </blockquote>
       <button class="btn btn-primary" id="newQuote"><i class="fa fa-file-text-o" aria-hidden="true"></i> New Quote</button>
-      <a class="btn btn-info twitter-share-button" id="tweetQuote" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</a>
+      <a class="btn btn-info twitter-share-button" id="tweetQuote"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</a>
     </div>
-
-
-
   </main>
-
-
   <footer class="footer">
     <div class="container">
       <p class="text-muted">©2015 Ray Meibaum. All rights reserved.</p>
